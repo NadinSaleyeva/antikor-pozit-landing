@@ -1250,6 +1250,10 @@ main {
 .timeline {
     padding: 100px 0;
     background: var(--color-white);
+    background-image: url('PHOTO/prompt2-3.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
 }
