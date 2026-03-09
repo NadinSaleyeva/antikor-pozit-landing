@@ -631,8 +631,32 @@ main {
 
 .need-check-footer {
     text-align: center;
-    padding-top: 30px;
+    padding: 80px 40px;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+    background-image: url('assets/gallery/prompt5-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.need-check-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.need-check-footer > * {
+    position: relative;
+    z-index: 2;
 }
 
 .need-check-footer__text {
@@ -641,32 +665,6 @@ main {
     color: var(--color-text-dark);
     margin-bottom: 30px;
     font-weight: 500;
-}
-
-.inspection-photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 40px 0;
-}
-
-.inspection-photo {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.inspection-photo:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.inspection-photo img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
 }
 
 .btn-inspection {
@@ -686,13 +684,9 @@ main {
         padding: 60px 0;
     }
 
-    .inspection-photos {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .inspection-photo img {
-        height: 200px;
+    .need-check-footer {
+        padding: 60px 20px;
+        margin-top: 30px;
     }
 }
 
