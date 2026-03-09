@@ -390,7 +390,7 @@ main {
     min-height: 600px;
     background-image:
         linear-gradient(to right, #ffffff 25%, rgba(255, 255, 255, 0.6) 45%, transparent 70%),
-        url('quality.webp');
+        url('painter-hero.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1402,60 +1402,6 @@ main {
     background-color: var(--color-white);
     width: 100%;
     overflow: hidden;
-}
-
-/* Process Steps Grid for Antikorr */
-.process-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.process-step {
-    background: white;
-    border: 2px solid #f0f0f0;
-    border-radius: 16px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.process-step:hover {
-    border-color: var(--color-primary-red);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(206, 53, 60, 0.1);
-}
-
-.process-step__number {
-    font-family: var(--font-secondary);
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--color-primary-red);
-    opacity: 0.2;
-    line-height: 1;
-    margin-bottom: 15px;
-}
-
-.process-step__content {
-    position: relative;
-}
-
-.process-step__title {
-    font-family: var(--font-secondary);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.process-step__desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--color-text-muted);
 }
 
 .section-header {
@@ -3671,7 +3617,7 @@ main {
     flex-direction: column;
     gap: 12px;
     align-items: flex-end;
-    z-index: 9999;
+    z-index: 1000;
     pointer-events: none;
     /* Let clicks pass through container */
 }
@@ -3692,6 +3638,7 @@ main {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
+    /* Disabled until visible */
 }
 
 .fab-v2-up.visible {
