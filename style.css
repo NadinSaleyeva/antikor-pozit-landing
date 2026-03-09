@@ -3677,22 +3677,21 @@ main {
 }
 
 .fab-v2-up {
-    width: 60px;
-    height: 60px;
-    background: red !important;
-    color: white !important;
+    width: 38px;
+    height: 38px;
+    background: white;
+    color: #555;
     border-radius: 10px;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5) !important;
-    border: 3px solid yellow !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #EFEFEF;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
-    /* DEBUG: Super visible for testing */
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
 }
 
 .fab-v2-up.visible {
