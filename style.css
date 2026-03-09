@@ -1249,7 +1249,7 @@ main {
 /* === TIMELINE SECTION === */
 .timeline {
     padding: 100px 0;
-    background: url('PHOTO/prompt2-3.webp') center/cover no-repeat;
+    background: url('assets/gallery/prompt2-3.webp') center/cover no-repeat;
     background-color: var(--color-white);
     position: relative;
     overflow: hidden;
@@ -1864,7 +1864,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('brocken-car.webp');
+    background-image: url('assets/gallery/brocken-car.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
