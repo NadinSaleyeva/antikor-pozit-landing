@@ -1249,11 +1249,8 @@ main {
 /* === TIMELINE SECTION === */
 .timeline {
     padding: 100px 0;
-    background: var(--color-white);
-    background-image: url('PHOTO/prompt2-3.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('PHOTO/prompt2-3.webp') center/cover no-repeat;
+    background-color: var(--color-white);
     position: relative;
     overflow: hidden;
 }
