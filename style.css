@@ -454,6 +454,8 @@ main {
     margin-left: 0;
     padding-left: 0;
     max-width: 100%;
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.7);
 }
 
