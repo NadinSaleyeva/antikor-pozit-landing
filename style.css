@@ -1136,23 +1136,22 @@ main {
 
 .price-list li {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 8px 0;
     font-size: 13px;
 }
 
-.price-list li:last-child {
-    border-bottom: none;
+.price-list li iconify-icon {
+    color: var(--color-primary-red);
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
 .price-list li span {
-    color: var(--color-text-muted);
+    color: var(--color-text-dark);
     font-weight: 500;
-    flex: 1;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .price-list li strong {
