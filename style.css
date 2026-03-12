@@ -684,7 +684,10 @@ main {
 }
 
 .btn-inspection {
-    /* Inherits all styles from .btn-shop - no overrides needed */
+    /* Inherits all styles from .btn-shop */
+    position: relative;
+    z-index: 2;
+    /* Ensure button is fully opaque and above the semi-transparent card */
 }
 
 @media (max-width: 992px) {
