@@ -401,7 +401,7 @@ main {
     position: absolute;
     top: 130px;
     /* Lowered to clear fixed header */
-    left: 40px;
+    left: 20px;
     font-size: 260px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.04);
