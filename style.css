@@ -634,13 +634,14 @@ main {
 .need-check-footer {
     text-align: center;
     padding: 80px 40px;
-    background-image: url('assets/gallery/prompt5-1.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: white;
     border-radius: 20px;
     position: relative;
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .need-check-footer::before {
@@ -648,21 +649,31 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.92);
+    width: 100%;
+    height: 100%;
+    background: url('assets/gallery/prompt5-1.webp') center/cover no-repeat;
+    opacity: 0.15;
+    filter: contrast(1.5) saturate(1.4) brightness(1.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.need-check-footer__card {
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    position: relative;
     z-index: 1;
 }
 
-.need-check-footer > * {
-    position: relative;
-    z-index: 2;
-}
-
 .need-check-footer__text {
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.8;
     color: var(--color-text-dark);
     margin-bottom: 30px;
     font-weight: 500;
@@ -686,8 +697,12 @@ main {
     }
 
     .need-check-footer {
-        padding: 60px 20px;
+        padding: 30px 20px;
         margin-top: 30px;
+    }
+
+    .need-check-footer__card {
+        padding: 32px 24px;
     }
 }
 
@@ -1251,8 +1266,7 @@ main {
 /* === TIMELINE SECTION === */
 .timeline {
     padding: 100px 0;
-    background: url('assets/gallery/prompt2-3.webp') center/cover no-repeat;
-    background-color: var(--color-white);
+    background: white;
     position: relative;
     overflow: hidden;
 }
@@ -1262,11 +1276,13 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/gallery/prompt2-3.webp') center/cover no-repeat;
+    opacity: 0.15;
+    filter: contrast(1.5) saturate(1.4) brightness(1.1);
     pointer-events: none;
+    z-index: 0;
 }
 
 .timeline .container {
@@ -1380,7 +1396,9 @@ main {
 }
 
 .timeline-card {
-    background: var(--color-bg);
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 40px;
     border: 1px solid rgba(0, 0, 0, 0.04);
@@ -2966,6 +2984,18 @@ main {
     .guarantee-card--single li {
         font-size: 16px;
         padding: 12px 0 12px 32px;
+    }
+
+    .need-check-footer {
+        padding: 30px 20px;
+    }
+
+    .need-check-footer__card {
+        padding: 32px 24px;
+    }
+
+    .need-check-footer__text {
+        font-size: 16px;
     }
 
 }
