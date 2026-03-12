@@ -57,7 +57,7 @@ button::-moz-focus-inner {
 }
 
 html {
-    overflow-x: hidden;
+    /* overflow-x: hidden removed - fix root cause instead of hiding */
 }
 
 body {
@@ -65,7 +65,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text-dark);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    /* overflow-x: hidden removed - fix root cause instead of hiding */
     width: 100%;
 }
 
@@ -79,7 +79,7 @@ img {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow-x: hidden;
+    /* overflow-x: hidden removed - fix root cause instead of hiding */
     width: 100%;
 }
 
@@ -87,8 +87,8 @@ img {
     width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 40px;
-    /* Base padding for large screens */
+    padding: 0 20px;
+    /* Reduced base padding for better mobile experience */
 }
 
 /* === HEADER === */
@@ -127,7 +127,8 @@ img {
 
 .header .container {
     max-width: 1300px;
-    padding: 0 40px;
+    padding: 0 20px;
+    /* Match base container padding */
 }
 
 .header__left {
@@ -400,7 +401,8 @@ main {
     position: absolute;
     top: 130px;
     /* Lowered to clear fixed header */
-    left: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 260px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.04);
@@ -411,7 +413,7 @@ main {
     text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 100%;
+    max-width: 90vw;
 }
 
 .hero__content {
@@ -1885,7 +1887,8 @@ main {
 .contacts__background-text {
     position: absolute;
     top: 60px;
-    right: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 200px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.04);
@@ -1897,7 +1900,7 @@ main {
     font-family: var(--font-primary);
     white-space: nowrap;
     overflow: hidden;
-    max-width: 100%;
+    max-width: 90vw;
 }
 
 .contacts__main-row {
@@ -2432,29 +2435,22 @@ main {
     background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
     border: 1px solid #E8E8E8;
     border-radius: 20px;
-    padding: 30px 40px;
+    padding: 20px 40px;
     margin: 40px 0 60px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-.brand-badge__header {
-    display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    text-align: center;
 }
 
 .brand-badge__logo {
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 12px;
+    width: 225px;
+    height: 225px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
     flex-shrink: 0;
 }
 
@@ -2475,33 +2471,22 @@ main {
     line-height: 1.3;
 }
 
-.brand-badge__content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .brand-badge__text {
     font-size: 14px;
     color: var(--color-text-muted);
     margin: 0;
     line-height: 1.6;
+    max-width: 800px;
 }
 
 @media (max-width: 768px) {
     .brand-badge {
-        padding: 24px 20px;
-    }
-
-    .brand-badge__header {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
+        padding: 16px 20px;
     }
 
     .brand-badge__logo {
-        width: 80px;
-        height: 80px;
+        width: 180px;
+        height: 180px;
     }
 
     .brand-badge__title {
@@ -2510,7 +2495,6 @@ main {
 
     .brand-badge__text {
         font-size: 13px;
-        text-align: center;
     }
 }
 
@@ -3381,8 +3365,9 @@ main {
     }
 
     .review-card {
-        /* FIX: Fixed width for mobile */
-        flex: 0 0 280px;
+        /* FIX: Use calc to ensure cards fit within viewport with padding */
+        flex: 0 0 calc(100vw - 80px);
+        max-width: 280px;
         padding: 28px 20px;
         border-radius: 16px;
         gap: 16px;
@@ -3609,6 +3594,18 @@ main {
 
     .header__nav {
         gap: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Restore full padding on desktop screens */
+    .container {
+        padding: 0 40px;
+    }
+
+    .header .container {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -3854,6 +3851,10 @@ main {
         flex-shrink: 0;
     }
 
+    .compact-logo img {
+        border-radius: 12px;
+    }
+
     .materials-compact-card h3 {
         font-size: 16px;
         margin-bottom: 16px;
@@ -3996,10 +3997,7 @@ main {
 }
 
 /* Fix for background text overflow */
-.hero,
-.contacts {
-    overflow-x: hidden;
-}
+/* Removed overflow-x: hidden from hero and contacts - fix root cause instead */
 
 /* === FLOATING ACTION BUTTONS === */
 .fab-v2-container {
@@ -4101,8 +4099,8 @@ main {
 
 @media (max-width: 768px) {
     .fab-v2-container {
-        bottom: 20px;
-        right: 20px;
+        bottom: 16px;
+        right: 16px;
     }
 }
 
@@ -4283,11 +4281,15 @@ main {
     }
 
     .compact-logo {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         margin: 0;
-        padding: 12px;
+        padding: 0;
         flex-shrink: 0;
+    }
+
+    .compact-logo img {
+        border-radius: 8px;
     }
 
     .equipment-icon-large {
@@ -4538,7 +4540,8 @@ main {
     }
 
     .review-card {
-        flex: 0 0 240px;
+        flex: 0 0 calc(100vw - 60px);
+        max-width: 240px;
         padding: 24px 16px;
         gap: 14px;
     }
