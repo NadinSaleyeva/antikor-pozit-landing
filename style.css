@@ -2615,6 +2615,16 @@ main {
     .brand-badge__text {
         font-size: 13px;
     }
+
+    .section-description {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .zone-subtitle {
+        font-size: 15px;
+        font-weight: 500;
+    }
 }
 
 /* Materials Zone */
