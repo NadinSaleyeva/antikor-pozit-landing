@@ -5191,17 +5191,19 @@ body:has(.cookie-banner.active) .fab-v2-container {
 .cookie-banner {
     display: none;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 900px;
     background: rgba(26, 26, 26, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: white;
     z-index: 9999;
     padding: 20px 0;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .cookie-banner.active {
