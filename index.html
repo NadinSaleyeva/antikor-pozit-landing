@@ -176,6 +176,31 @@
                 </div>
             </section>
 
+            <!-- === VIDEO SECTION === -->
+            <section id="video-process" class="video-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Видео из бокса</p>
+                        <h2 class="section-title">КАК <span>/</span> НАНОСИМ ПОКРЫТИЕ</h2>
+                        <p class="section-description">Посмотрите как выглядит процесс антикоррозийной обработки</p>
+                    </div>
+
+                    <div class="video-grid fade-up">
+                        <div class="video-card">
+                            <div class="video-wrapper video-wrapper--vertical">
+                                <video
+                                    playsinline
+                                    preload="none"
+                                    poster="assets/video/how-poster.webp"
+                                    controls>
+                                    <source src="assets/video/how.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- === BENEFITS SECTION === -->
             <section id="benefits" class="benefits">
                 <div class="container">
@@ -349,6 +374,45 @@
                             <path d="M12 8v4l3 3" />
                         </svg>
                         <p>Указано среднее время. Точный срок – после осмотра.</p>
+                    </div>
+
+                    <div class="timeline-video fade-up">
+                        <div class="video-wrapper video-wrapper--horizontal">
+                            <video
+                                playsinline
+                                preload="none"
+                                poster="assets/video/all-video-poster.webp"
+                                controls>
+                                <source src="assets/video/all-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="video-card__label">Полный процесс обработки</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === PREPARATION SECTION === -->
+            <section id="preparation" class="preparation-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Этап перед обработкой</p>
+                        <h2 class="section-title">ПОДГОТОВКА <span>/</span> КУЗОВА</h2>
+                        <p class="section-description">Защищаем всё, что не обрабатывается: кузов, колёса, тормоза и элементы подвески</p>
+                    </div>
+
+                    <div class="preparation-grid fade-up">
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-1.webp" alt="Кузов в защитной плёнке перед обработкой" loading="lazy">
+                            <figcaption>Укрытие кузова плёнкой</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-2.webp" alt="Маскировка колёсных арок" loading="lazy">
+                            <figcaption>Маскировка арок и порогов</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-3.webp" alt="Защита колёс и тормозных дисков" loading="lazy">
+                            <figcaption>Защита колёс и тормозных дисков</figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -563,11 +627,11 @@
                             <!-- Case 1 -->
                             <div class="comparison-card" data-case="1">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt1.webp" alt="Антикор до" draggable="false"
+                                    <img src="assets/gallery/case1-after.webp" alt="Днище после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt2-1.webp" alt="Антикор после" draggable="false"
+                                    <img src="assets/gallery/case1-before.webp" alt="Днище до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -583,11 +647,11 @@
                             <!-- Case 2 -->
                             <div class="comparison-card" data-case="2">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt3-1.webp" alt="Обработка до" draggable="false"
+                                    <img src="assets/gallery/case2-after.webp" alt="Центральный тоннель после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt3-4.webp" alt="Обработка после" draggable="false"
+                                    <img src="assets/gallery/case2-before.webp" alt="Центральный тоннель до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -603,11 +667,11 @@
                             <!-- Case 3 -->
                             <div class="comparison-card" data-case="3">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt5-1.webp" alt="Днище до" draggable="false"
+                                    <img src="assets/gallery/case3-after.webp" alt="Колёсная арка после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt5-2.webp" alt="Днище после" draggable="false"
+                                    <img src="assets/gallery/case3-before.webp" alt="Колёсная арка до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -623,51 +687,11 @@
                             <!-- Case 4 -->
                             <div class="comparison-card" data-case="4">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt6-1.webp" alt="Арки до" draggable="false"
+                                    <img src="assets/gallery/case4-after.webp" alt="Порог после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt6-2.webp" alt="Арки после" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 5 -->
-                            <div class="comparison-card" data-case="5">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt9-1.webp" alt="Пороги до" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt9-2.webp" alt="Пороги после" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 6 -->
-                            <div class="comparison-card" data-case="6">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt10-1.webp" alt="Полости до" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt10-2.webp" alt="Полости после" draggable="false"
+                                    <img src="assets/gallery/case4-before.webp" alt="Порог до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -692,8 +716,6 @@
                         </button>
                         <div class="dots-indicator">
                             <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
                             <div class="dot"></div>
                             <div class="dot"></div>
                             <div class="dot"></div>
