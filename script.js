@@ -583,4 +583,41 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // === CONTACT FAB (expandable) ===
+    const fab = document.getElementById('fab');
+    const fabMain = document.getElementById('fabMain');
+    const fabBackdrop = document.getElementById('fabBackdrop');
+
+    if (fab && fabMain) {
+        const openFab = () => {
+            fab.classList.add('open');
+            fabMain.setAttribute('aria-expanded', 'true');
+        };
+        const closeFab = () => {
+            fab.classList.remove('open');
+            fabMain.setAttribute('aria-expanded', 'false');
+        };
+
+        fabMain.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fab.classList.contains('open') ? closeFab() : openFab();
+        });
+
+        if (fabBackdrop) fabBackdrop.addEventListener('click', closeFab);
+
+        document.addEventListener('click', (e) => {
+            if (!fab.contains(e.target)) closeFab();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeFab();
+        });
+
+        fab.querySelectorAll('.fab-item').forEach(item => {
+            item.addEventListener('click', () => {
+                setTimeout(closeFab, 100);
+            });
+        });
+    }
 });
