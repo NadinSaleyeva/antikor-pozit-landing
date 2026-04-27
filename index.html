@@ -33,7 +33,7 @@
         rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=13">
 
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
@@ -121,7 +121,7 @@
                             </p>
                             <div class="product-actions">
                                 <a href="#contacts" class="btn-shop" style="text-transform: uppercase;">ЗАПИСАТЬСЯ</a>
-                                <a href="#before-after" class="price-box">СМОТРЕТЬ КАК ДЕЛАЕМ</a>
+                                <a href="#services" class="price-box">УЗНАТЬ СТОИМОСТЬ</a>
                             </div>
                         </div>
                     </div>
@@ -177,32 +177,123 @@
             </section>
 
             <!-- === VIDEO SECTION === -->
-            <section id="video-process" class="video-section">
+            <section id="before-after" class="before-after">
                 <div class="container">
                     <div class="section-header">
-                        <p class="section-subtitle">Видео из бокса</p>
-                        <h2 class="section-title">КАК <span>/</span> НАНОСИМ ПОКРЫТИЕ</h2>
-                        <p class="section-description">Посмотрите как выглядит процесс антикоррозийной обработки</p>
+                        <p class="section-subtitle">Процесс обработки</p>
+                        <h2 class="section-title">КАК <span>/</span> ДЕЛАЕМ</h2>
                     </div>
 
-                    <div class="video-grid fade-up">
-                        <div class="video-card">
-                            <div class="video-wrapper video-wrapper--vertical">
-                                <video
-                                    playsinline
-                                    preload="none"
-                                    poster="assets/video/how-poster.webp"
-                                    controls>
-                                    <source src="assets/video/how.mp4" type="video/mp4">
-                                </video>
+                    <div class="before-after-wrapper">
+                        <div class="before-after-grid">
+                            <!-- Case 1 -->
+                            <div class="comparison-card" data-case="1">
+                                <div class="comparison-img after">
+                                    <img src="assets/gallery/case1-after.webp" alt="Днище после обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="assets/gallery/case1-before.webp" alt="Днище до обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Case 2 -->
+                            <div class="comparison-card" data-case="2">
+                                <div class="comparison-img after">
+                                    <img src="assets/gallery/case2-after.webp" alt="Центральный тоннель после обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="assets/gallery/case2-before.webp" alt="Центральный тоннель до обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 3 -->
+                            <div class="comparison-card" data-case="3">
+                                <div class="comparison-img after">
+                                    <img src="assets/gallery/case3-after.webp" alt="Колёсная арка после обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="assets/gallery/case3-before.webp" alt="Колёсная арка до обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 4 -->
+                            <div class="comparison-card" data-case="4">
+                                <div class="comparison-img after">
+                                    <img src="assets/gallery/case4-after.webp" alt="Порог после обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="assets/gallery/case4-before.webp" alt="Порог до обработки" draggable="false"
+                                        loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- === BENEFITS SECTION === -->
-            <section id="benefits" class="benefits">
+                    <!-- Mobile Navigation (Visible only on mobile) -->
+                    <div class="mobile-nav-comparison">
+                        <button class="nav-arrow prev-case">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <button class="nav-arrow next-case">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+    </div>
+    </section>
+
+    <!-- === GUARANTEE SECTION === -->
+    <section id="benefits" class="benefits">
                 <div class="container">
                     <div class="benefits__grid">
                         <!-- Professional -->
@@ -256,7 +347,88 @@
                 </div>
             </section>
 
+            <!-- === PREPARATION SECTION === -->
+            <section id="preparation" class="preparation-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Этап перед обработкой</p>
+                        <h2 class="section-title">ПОДГОТОВКА <span>/</span> КУЗОВА</h2>
+                        <p class="section-description">Защищаем всё, что не обрабатывается: кузов, колёса, тормоза и элементы подвески</p>
+                    </div>
 
+                    <div class="preparation-grid fade-up">
+                        <figure class="preparation-card">
+                            <div class="prep-slider" data-prep-slider>
+                                <div class="prep-slider__track">
+                                    <img src="assets/gallery/prep-1.webp" alt="Кузов в защитной плёнке перед обработкой" class="prep-slider__slide is-active" loading="lazy">
+                                    <img src="assets/gallery/prep-1b.webp" alt="Порог под защитной плёнкой и малярным скотчем" class="prep-slider__slide" loading="lazy">
+                                    <img src="assets/gallery/prep-1c.webp" alt="Машина целиком накрыта защитной плёнкой" class="prep-slider__slide" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="prep-slider-nav">
+                                <button type="button" class="nav-arrow prep-prev" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <div class="dots-indicator">
+                                    <div class="dot active"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                <button type="button" class="nav-arrow prep-next" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                            <figcaption>Укрытие кузова плёнкой</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <div class="prep-slider" data-prep-slider>
+                                <div class="prep-slider__track">
+                                    <img src="assets/gallery/prep-2.webp" alt="Маскировка колёсных арок" class="prep-slider__slide is-active" loading="lazy">
+                                    <img src="assets/gallery/prep-2b.webp" alt="Колёсная арка под защитной маскировкой" class="prep-slider__slide" loading="lazy">
+                                    <img src="assets/gallery/prep-2c.webp" alt="Стойка и колёсная арка в защитной плёнке" class="prep-slider__slide" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="prep-slider-nav">
+                                <button type="button" class="nav-arrow prep-prev" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <div class="dots-indicator">
+                                    <div class="dot active"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                <button type="button" class="nav-arrow prep-next" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                            <figcaption>Маскировка арок и порогов</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <div class="prep-slider" data-prep-slider>
+                                <div class="prep-slider__track">
+                                    <img src="assets/gallery/prep-3.webp" alt="Защита колёс и тормозных дисков" class="prep-slider__slide is-active" loading="lazy">
+                                    <img src="assets/gallery/prep-3b.webp" alt="Колесо и тормозной диск под защитной плёнкой" class="prep-slider__slide" loading="lazy">
+                                    <img src="assets/gallery/prep-3c.webp" alt="Машина в защитной плёнке, колёса в защите" class="prep-slider__slide" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="prep-slider-nav">
+                                <button type="button" class="nav-arrow prep-prev" aria-label="Предыдущее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                                </button>
+                                <div class="dots-indicator">
+                                    <div class="dot active"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                <button type="button" class="nav-arrow prep-next" aria-label="Следующее фото">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                            <figcaption>Защита колёс и тормозных дисков</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
 
             <!-- === SERVICES / PRICING SECTION === -->
             <section id="services" class="services">
@@ -392,27 +564,162 @@
             </section>
 
             <!-- === PREPARATION SECTION === -->
-            <section id="preparation" class="preparation-section">
-                <div class="container">
-                    <div class="section-header">
-                        <p class="section-subtitle">Этап перед обработкой</p>
-                        <h2 class="section-title">ПОДГОТОВКА <span>/</span> КУЗОВА</h2>
-                        <p class="section-description">Защищаем всё, что не обрабатывается: кузов, колёса, тормоза и элементы подвески</p>
+            <section id="guarantee" class="guarantee-section">
+        <div class="guarantee-bg-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Ваше спокойствие</p>
+                <h2 class="section-title">ГАРАНТИЯ <span>/</span> НА РЕЗУЛЬТАТ</h2>
+            </div>
+            <div class="guarantee-grid">
+                <div class="guarantee-card guarantee-card--single fade-up">
+                    <ul>
+                        <li>ГАРАНТИЯ ДО 3 ЛЕТ на антикоррозийную обработку</li>
+                        <li>Видеоотчет всех зон обработки до и после</li>
+                        <li>Рекомендации: ежегодный осмотр днища и профилактика проливки скрытых полостей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- === FAQ SECTION === -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Что о нас говорят</p>
+                <h2 class="section-title">ОТЗЫВЫ <span>/</span> КЛИЕНТОВ</h2>
+            </div>
+        </div>
+
+        <div class="reviews-slider-container">
+            <button class="review-nav-arrow review-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="review-nav-arrow review-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <div class="reviews-track-wrapper">
+                <div class="reviews-track">
+                    <!-- Card 1 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Сделали полную антикоррозийную обработку. Мастер показал фото всего
+                            процесса - днище, арки, скрытые полости. Очень доволен подходом и качеством!»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/alexandr.webp" alt="Алексей" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Алексей С.</div>
+                                <div class="review-car">Volkswagen Tiguan</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="preparation-grid fade-up">
-                        <figure class="preparation-card">
-                            <img src="assets/gallery/prep-1.webp" alt="Кузов в защитной плёнке перед обработкой" loading="lazy">
-                            <figcaption>Укрытие кузова плёнкой</figcaption>
-                        </figure>
-                        <figure class="preparation-card">
-                            <img src="assets/gallery/prep-2.webp" alt="Маскировка колёсных арок" loading="lazy">
-                            <figcaption>Маскировка арок и порогов</figcaption>
-                        </figure>
-                        <figure class="preparation-card">
-                            <img src="assets/gallery/prep-3.webp" alt="Защита колёс и тормозных дисков" loading="lazy">
-                            <figcaption>Защита колёс и тормозных дисков</figcaption>
-                        </figure>
+                    <!-- Card 2 -->
+                    <div class="review-card active">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Купили б/у авто, сразу поехали на антикор. Мастер честно показал где уже
+                            есть ржавчина, обработали все проблемные места. Теперь спокойна за машину!»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/alena_b.webp" alt="Марина" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Марина В.</div>
+                                <div class="review-car">Mazda CX-5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Отличная обработка скрытых полостей ML-методом. Рекомендую этот сервис.
+                            Записался в понедельник, в среду уже забрал готовую машину.»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/andrey-strelkovsky.webp" alt="Дмитрий" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Дмитрий К.</div>
+                                <div class="review-car">BMW X5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Профессиональный подход, вежливые мастера. Обработали днище премиальными
+                            материалами Noxudol, дали гарантию на 3 года. Очень доволен результатом!»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/vitaly-k.webp" alt="Евгений" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Евгений М.</div>
+                                <div class="review-car">Mercedes E-Class</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile scroll indicators -->
+            <div class="review-scroll-indicators">
+                <span class="review-dot active"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- === CONTACTS SECTION === -->
+    <section id="video-process" class="video-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Видео из бокса</p>
+                        <h2 class="section-title">КАК <span>/</span> НАНОСИМ ПОКРЫТИЕ</h2>
+                        <p class="section-description">Посмотрите как выглядит процесс антикоррозийной обработки</p>
+                    </div>
+
+                    <div class="video-grid fade-up">
+                        <div class="video-card">
+                            <div class="video-wrapper video-wrapper--vertical">
+                                <video
+                                    playsinline
+                                    preload="none"
+                                    poster="assets/video/how-poster.webp"
+                                    controls>
+                                    <source src="assets/video/how.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -615,144 +922,7 @@
 
             <!-- === BEFORE/AFTER SECTION === -->
 
-            <section id="before-after" class="before-after">
-                <div class="container">
-                    <div class="section-header">
-                        <p class="section-subtitle">Процесс обработки</p>
-                        <h2 class="section-title">КАК <span>/</span> ДЕЛАЕМ</h2>
-                    </div>
-
-                    <div class="before-after-wrapper">
-                        <div class="before-after-grid">
-                            <!-- Case 1 -->
-                            <div class="comparison-card" data-case="1">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/case1-after.webp" alt="Днище после обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/case1-before.webp" alt="Днище до обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 2 -->
-                            <div class="comparison-card" data-case="2">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/case2-after.webp" alt="Центральный тоннель после обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/case2-before.webp" alt="Центральный тоннель до обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 3 -->
-                            <div class="comparison-card" data-case="3">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/case3-after.webp" alt="Колёсная арка после обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/case3-before.webp" alt="Колёсная арка до обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 4 -->
-                            <div class="comparison-card" data-case="4">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/case4-after.webp" alt="Порог после обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/case4-before.webp" alt="Порог до обработки" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Mobile Navigation (Visible only on mobile) -->
-                    <div class="mobile-nav-comparison">
-                        <button class="nav-arrow prev-case">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
-                                <path d="M15 18l-6-6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="dots-indicator">
-                            <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                        <button class="nav-arrow next-case">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
-                                <path d="M9 18l6-6-6-6" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-    </div>
-    </section>
-
-    <!-- === GUARANTEE SECTION === -->
-    <section id="guarantee" class="guarantee-section">
-        <div class="guarantee-bg-overlay"></div>
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Ваше спокойствие</p>
-                <h2 class="section-title">ГАРАНТИЯ <span>/</span> НА РЕЗУЛЬТАТ</h2>
-            </div>
-            <div class="guarantee-grid">
-                <div class="guarantee-card guarantee-card--single fade-up">
-                    <ul>
-                        <li>ГАРАНТИЯ ДО 3 ЛЕТ на антикоррозийную обработку</li>
-                        <li>Видеоотчет всех зон обработки до и после</li>
-                        <li>Рекомендации: ежегодный осмотр днища и профилактика проливки скрытых полостей</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- === FAQ SECTION === -->
-    <section id="faq" class="faq-section">
+            <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header">
                 <p class="section-subtitle">Часто задаваемые вопросы </p>
@@ -834,121 +1004,6 @@
         </div>
     </section>
 
-    <section id="reviews" class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Что о нас говорят</p>
-                <h2 class="section-title">ОТЗЫВЫ <span>/</span> КЛИЕНТОВ</h2>
-            </div>
-        </div>
-
-        <div class="reviews-slider-container">
-            <button class="review-nav-arrow review-prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 18l-6-6 6-6" />
-                </svg>
-            </button>
-            <button class="review-nav-arrow review-next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
-            </button>
-
-            <div class="reviews-track-wrapper">
-                <div class="reviews-track">
-                    <!-- Card 1 -->
-                    <div class="review-card">
-                        <div class="review-stars">
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                        </div>
-                        <p class="review-text">«Сделали полную антикоррозийную обработку. Мастер показал фото всего
-                            процесса - днище, арки, скрытые полости. Очень доволен подходом и качеством!»</p>
-                        <div class="review-author">
-                            <img src="assets/clients/alexandr.webp" alt="Алексей" class="review-avatar">
-                            <div class="review-author-info">
-                                <div class="review-name">Алексей С.</div>
-                                <div class="review-car">Volkswagen Tiguan</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="review-card active">
-                        <div class="review-stars">
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                        </div>
-                        <p class="review-text">«Купили б/у авто, сразу поехали на антикор. Мастер честно показал где уже
-                            есть ржавчина, обработали все проблемные места. Теперь спокойна за машину!»</p>
-                        <div class="review-author">
-                            <img src="assets/clients/alena_b.webp" alt="Марина" class="review-avatar">
-                            <div class="review-author-info">
-                                <div class="review-name">Марина В.</div>
-                                <div class="review-car">Mazda CX-5</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="review-card">
-                        <div class="review-stars">
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                        </div>
-                        <p class="review-text">«Отличная обработка скрытых полостей ML-методом. Рекомендую этот сервис.
-                            Записался в понедельник, в среду уже забрал готовую машину.»</p>
-                        <div class="review-author">
-                            <img src="assets/clients/andrey-strelkovsky.webp" alt="Дмитрий" class="review-avatar">
-                            <div class="review-author-info">
-                                <div class="review-name">Дмитрий К.</div>
-                                <div class="review-car">BMW X5</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="review-card">
-                        <div class="review-stars">
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                            <iconify-icon icon="ph:star-fill"></iconify-icon>
-                        </div>
-                        <p class="review-text">«Профессиональный подход, вежливые мастера. Обработали днище премиальными
-                            материалами Noxudol, дали гарантию на 3 года. Очень доволен результатом!»</p>
-                        <div class="review-author">
-                            <img src="assets/clients/vitaly-k.webp" alt="Евгений" class="review-avatar">
-                            <div class="review-author-info">
-                                <div class="review-name">Евгений М.</div>
-                                <div class="review-car">Mercedes E-Class</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile scroll indicators -->
-            <div class="review-scroll-indicators">
-                <span class="review-dot active"></span>
-                <span class="review-dot"></span>
-                <span class="review-dot"></span>
-                <span class="review-dot"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- === CONTACTS SECTION === -->
     <section id="contacts" class="contacts">
         <div class="container">
             <div class="contacts__background-text">CONTACTS</div>
@@ -1138,7 +1193,7 @@
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                 </svg>
             </span>
-            СВЯЗЬ С НАМИ
+            СВЯЗАТЬСЯ С НАМИ
         </button>
     </div>
     <div class="fab-backdrop" id="fabBackdrop"></div>
