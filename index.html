@@ -33,7 +33,7 @@
         rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=19">
 
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
@@ -470,17 +470,53 @@
                         <p>Указано среднее время. Точный срок – после осмотра.</p>
                     </div>
 
-                    <div class="timeline-video fade-up">
-                        <div class="video-wrapper video-wrapper--horizontal">
-                            <video
-                                playsinline
-                                preload="none"
-                                poster="assets/video/all-video-poster.webp"
-                                controls>
-                                <source src="assets/video/all-video.mp4" type="video/mp4">
-                            </video>
+                    <div class="video-carousel fade-up" data-video-carousel>
+                        <button type="button" class="video-carousel-arrow video-carousel-prev" aria-label="Предыдущее видео">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div class="video-carousel__strip">
+                            <!-- ВИДЕО-СЛАЙД. Чтобы добавить ещё одно — продублируй блок ниже. -->
+                            <div class="video-carousel__slide">
+                                <div class="video-wrapper video-wrapper--horizontal">
+                                    <video
+                                        playsinline
+                                        preload="none"
+                                        poster="assets/video/all-video-poster.webp"
+                                        controls>
+                                        <source src="assets/video/all-video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="video-card__label">Полный процесс обработки</p>
+                            </div>
+                            <div class="video-carousel__slide">
+                                <div class="video-wrapper video-wrapper--horizontal">
+                                    <video
+                                        playsinline
+                                        preload="none"
+                                        poster="assets/video/monjaro-poster.webp"
+                                        controls>
+                                        <source src="assets/video/monjaro.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="video-card__label">Обзор результата: Geely Monjaro</p>
+                            </div>
+                            <div class="video-carousel__slide">
+                                <div class="video-wrapper video-wrapper--horizontal">
+                                    <video
+                                        playsinline
+                                        preload="none"
+                                        poster="assets/video/leapmotor-poster.webp"
+                                        controls>
+                                        <source src="assets/video/leapmotor.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="video-card__label">Обзор результата: Leapmotor B10</p>
+                            </div>
                         </div>
-                        <p class="video-card__label">Полный процесс обработки</p>
+                        <button type="button" class="video-carousel-arrow video-carousel-next" aria-label="Следующее видео">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                        <div class="video-carousel__dots" aria-hidden="true"></div>
                     </div>
                 </div>
             </section>
@@ -516,13 +552,13 @@
         </div>
 
         <div class="reviews-slider-container">
-            <button class="review-nav-arrow review-prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button type="button" class="review-nav-arrow review-prev" aria-label="Предыдущий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
                     <path d="M15 18l-6-6 6-6" />
                 </svg>
             </button>
-            <button class="review-nav-arrow review-next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button type="button" class="review-nav-arrow review-next" aria-label="Следующий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
                     <path d="M9 18l6-6-6-6" />
                 </svg>
             </button>
@@ -621,6 +657,435 @@
         </div>
     </section>
 
+    <!-- === REVIEWS YANDEX-STYLE (TEMPLATE FOR NEW SECTION) === -->
+    <section id="reviews-2" class="reviews-section reviews-section--yandex">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Что о нас говорят</p>
+                <h2 class="section-title">ОТЗЫВЫ <span>/</span> КЛИЕНТОВ</h2>
+                <a href="https://yandex.by/maps/org/pozit/1681408431/reviews/" target="_blank" rel="noopener" class="yandex-reviews-link">
+                    <span class="yandex-reviews-link__rating">
+                        <span class="yandex-reviews-link__score">4,0</span>
+                        <span class="yandex-reviews-link__stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-half-fill"></iconify-icon>
+                        </span>
+                        <span class="yandex-reviews-link__count">39 отзывов</span>
+                    </span>
+                    <span class="yandex-reviews-link__cta">
+                        Все отзывы на
+                        <span class="yandex-logo">
+                            <span class="yandex-logo__mark">Я</span><span class="yandex-logo__text">ндекс.Карты</span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="reviews-slider-container">
+            <button type="button" class="review-nav-arrow review-prev" aria-label="Предыдущий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button type="button" class="review-nav-arrow review-next" aria-label="Следующий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <div class="reviews-track-wrapper">
+                <div class="reviews-track">
+                    <!-- Card 1: alex v. (антикор) -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="blue">A</span>
+                            <div class="review-author-info">
+                                <div class="review-name">alex v.</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Сделал антикор, пролили качественно. Доброжелательный персонал, подсказали
+                            и посоветовали как сделать. По деньгам приемлемо. Позже обратился по кузовным работам —
+                            остался в восторге»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Сергей Хмара (антикор днища) -->
+                    <div class="review-card active">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="green">С</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Сергей Хмара</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Делал здесь антикор днища. Всё понравилось. Отношение к клиенту, подход —
+                            всё на уровне.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Дмитрий Гологуш (общий) -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="orange">Д</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Дмитрий Гологуш</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Отличный сервис, отличная обратная связь без воды, всё по делу.
+                            Порадовали качество и оперативность работы.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Alena B. (видеоотчёт) -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="pink">A</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Alena B.</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Качественная работа. Прилагают видеоотчёт.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile scroll indicators -->
+            <div class="review-scroll-indicators">
+                <span class="review-dot active"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- === REVIEWS YANDEX-2 (второй филиал POZIT) === -->
+    <section id="reviews-3" class="reviews-section reviews-section--yandex">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Что о нас говорят</p>
+                <h2 class="section-title">ОТЗЫВЫ <span>/</span> КЛИЕНТОВ</h2>
+                <a href="https://yandex.by/maps/org/pozit/125644717749/reviews/" target="_blank" rel="noopener" class="yandex-reviews-link">
+                    <span class="yandex-reviews-link__rating">
+                        <span class="yandex-reviews-link__score">4,4</span>
+                        <span class="yandex-reviews-link__stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-half-fill"></iconify-icon>
+                        </span>
+                        <span class="yandex-reviews-link__count">114 отзывов</span>
+                    </span>
+                    <span class="yandex-reviews-link__cta">
+                        Все отзывы на
+                        <span class="yandex-logo">
+                            <span class="yandex-logo__mark">Я</span><span class="yandex-logo__text">ндекс.Карты</span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="reviews-slider-container">
+            <button type="button" class="review-nav-arrow review-prev" aria-label="Предыдущий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button type="button" class="review-nav-arrow review-next" aria-label="Следующий отзыв">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <div class="reviews-track-wrapper">
+                <div class="reviews-track">
+                    <!-- Card 1: Алексей Случич -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="blue">А</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Алексей Случич</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Отличный автосервис! Быстро и качественно делают свою работу. Запчасти,
+                            при необходимости, не только сами закажут и доставят»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Maksim Kanishchau -->
+                    <div class="review-card active">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="green">M</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Maksim Kanishchau</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Всегда нравилось как здесь работают. Уровень ответственности и качества
+                            выполнения работ хороший.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Анна Иванова -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="orange">А</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Анна Иванова</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Обслуживаюсь здесь более пяти лет. Пока никаких нареканий. Всё выполняется
+                            отлично. Цены приемлемые.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Алексей Подобед -->
+                    <div class="review-card">
+                        <div class="review-author">
+                            <span class="review-avatar review-avatar--initial" data-color="pink">А</span>
+                            <div class="review-author-info">
+                                <div class="review-name">Алексей Подобед</div>
+                            </div>
+                        </div>
+                        <p class="review-text">«Рекомендую. Вежливый персонал. Специалисты знают свою работу. Сроки
+                            соблюдают.»</p>
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile scroll indicators -->
+            <div class="review-scroll-indicators">
+                <span class="review-dot active"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- === WORKS GALLERY === -->
+    <section id="works" class="works-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Архив</p>
+                <h2 class="section-title">НАШИ <span>/</span> РАБОТЫ</h2>
+                <p class="section-description">Проекты, которые мы обработали — листай ленту и нажимай на фото для увеличения</p>
+            </div>
+        </div>
+
+        <div class="works-strip-wrapper fade-up">
+            <button type="button" class="works-arrow works-prev" aria-label="Предыдущие фото">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="works-strip" data-works-strip>
+                <a class="works-item" href="assets/works/work-01.webp" data-index="0">
+                    <img src="assets/works/work-01.webp" alt="Работа 1" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-02.webp" data-index="1">
+                    <img src="assets/works/work-02.webp" alt="Работа 2" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-03.webp" data-index="2">
+                    <img src="assets/works/work-03.webp" alt="Работа 3" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-04.webp" data-index="3">
+                    <img src="assets/works/work-04.webp" alt="Работа 4" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-05.webp" data-index="4">
+                    <img src="assets/works/work-05.webp" alt="Работа 5" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-06.webp" data-index="5">
+                    <img src="assets/works/work-06.webp" alt="Работа 6" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-07.webp" data-index="6">
+                    <img src="assets/works/work-07.webp" alt="Работа 7" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-08.webp" data-index="7">
+                    <img src="assets/works/work-08.webp" alt="Работа 8" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-09.webp" data-index="8">
+                    <img src="assets/works/work-09.webp" alt="Работа 9" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-10.webp" data-index="9">
+                    <img src="assets/works/work-10.webp" alt="Работа 10" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-11.webp" data-index="10">
+                    <img src="assets/works/work-11.webp" alt="Работа 11" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-12.webp" data-index="11">
+                    <img src="assets/works/work-12.webp" alt="Работа 12" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-13.webp" data-index="12">
+                    <img src="assets/works/work-13.webp" alt="Работа 13" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-14.webp" data-index="13">
+                    <img src="assets/works/work-14.webp" alt="Работа 14" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-15.webp" data-index="14">
+                    <img src="assets/works/work-15.webp" alt="Работа 15" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-16.webp" data-index="15">
+                    <img src="assets/works/work-16.webp" alt="Работа 16" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-17.webp" data-index="16">
+                    <img src="assets/works/work-17.webp" alt="Работа 17" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-18.webp" data-index="17">
+                    <img src="assets/works/work-18.webp" alt="Работа 18" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-19.webp" data-index="18">
+                    <img src="assets/works/work-19.webp" alt="Работа 19" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-20.webp" data-index="19">
+                    <img src="assets/works/work-20.webp" alt="Работа 20" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-21.webp" data-index="20">
+                    <img src="assets/works/work-21.webp" alt="Работа 21" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-22.webp" data-index="21">
+                    <img src="assets/works/work-22.webp" alt="Работа 22" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-23.webp" data-index="22">
+                    <img src="assets/works/work-23.webp" alt="Работа 23" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-24.webp" data-index="23">
+                    <img src="assets/works/work-24.webp" alt="Работа 24" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-25.webp" data-index="24">
+                    <img src="assets/works/work-25.webp" alt="Работа 25" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-26.webp" data-index="25">
+                    <img src="assets/works/work-26.webp" alt="Работа 26" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-27.webp" data-index="26">
+                    <img src="assets/works/work-27.webp" alt="Работа 27" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-28.webp" data-index="27">
+                    <img src="assets/works/work-28.webp" alt="Работа 28" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-29.webp" data-index="28">
+                    <img src="assets/works/work-29.webp" alt="Работа 29" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-30.webp" data-index="29">
+                    <img src="assets/works/work-30.webp" alt="Работа 30" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-31.webp" data-index="30">
+                    <img src="assets/works/work-31.webp" alt="Работа 31" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-32.webp" data-index="31">
+                    <img src="assets/works/work-32.webp" alt="Работа 32" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-33.webp" data-index="32">
+                    <img src="assets/works/work-33.webp" alt="Работа 33" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-34.webp" data-index="33">
+                    <img src="assets/works/work-34.webp" alt="Работа 34" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-35.webp" data-index="34">
+                    <img src="assets/works/work-35.webp" alt="Работа 35" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-36.webp" data-index="35">
+                    <img src="assets/works/work-36.webp" alt="Работа 36" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-37.webp" data-index="36">
+                    <img src="assets/works/work-37.webp" alt="Работа 37" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-38.webp" data-index="37">
+                    <img src="assets/works/work-38.webp" alt="Работа 38" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-39.webp" data-index="38">
+                    <img src="assets/works/work-39.webp" alt="Работа 39" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-40.webp" data-index="39">
+                    <img src="assets/works/work-40.webp" alt="Работа 40" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-41.webp" data-index="40">
+                    <img src="assets/works/work-41.webp" alt="Работа 41" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-42.webp" data-index="41">
+                    <img src="assets/works/work-42.webp" alt="Работа 42" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-43.webp" data-index="42">
+                    <img src="assets/works/work-43.webp" alt="Работа 43" loading="lazy">
+                </a>
+                <a class="works-item" href="assets/works/work-44.webp" data-index="43">
+                    <img src="assets/works/work-44.webp" alt="Работа 44" loading="lazy">
+                </a>
+            </div>
+            <button type="button" class="works-arrow works-next" aria-label="Следующие фото">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- === WORKS LIGHTBOX === -->
+    <div class="works-lightbox" data-works-lightbox aria-hidden="true" role="dialog">
+        <button type="button" class="works-lightbox__close" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <button type="button" class="works-lightbox__nav works-lightbox__prev" aria-label="Предыдущее фото">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <img class="works-lightbox__img" src="" alt="">
+        <button type="button" class="works-lightbox__nav works-lightbox__next" aria-label="Следующее фото">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="works-lightbox__counter"></div>
+    </div>
+
     <!-- === CONTACTS SECTION === -->
     <section id="video-process" class="video-section">
                 <div class="container">
@@ -630,18 +1095,40 @@
                         <p class="section-description">Посмотрите как выглядит процесс антикоррозийной обработки</p>
                     </div>
 
-                    <div class="video-grid fade-up">
-                        <div class="video-card">
-                            <div class="video-wrapper video-wrapper--vertical">
-                                <video
-                                    playsinline
-                                    preload="none"
-                                    poster="assets/video/how-poster.webp"
-                                    controls>
-                                    <source src="assets/video/how.mp4" type="video/mp4">
-                                </video>
+                    <div class="video-carousel video-carousel--vertical fade-up" data-video-carousel>
+                        <button type="button" class="video-carousel-arrow video-carousel-prev" aria-label="Предыдущее видео">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div class="video-carousel__strip">
+                            <div class="video-carousel__slide">
+                                <div class="video-wrapper video-wrapper--vertical">
+                                    <video
+                                        playsinline
+                                        preload="none"
+                                        poster="assets/video/process-poster.webp"
+                                        controls>
+                                        <source src="assets/video/process.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="video-card__label">Процесс работы</p>
+                            </div>
+                            <div class="video-carousel__slide">
+                                <div class="video-wrapper video-wrapper--vertical">
+                                    <video
+                                        playsinline
+                                        preload="none"
+                                        poster="assets/video/vesta-poster.webp"
+                                        controls>
+                                        <source src="assets/video/vesta.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="video-card__label">Обзор результата: Lada Vesta</p>
                             </div>
                         </div>
+                        <button type="button" class="video-carousel-arrow video-carousel-next" aria-label="Следующее видео">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                        <div class="video-carousel__dots" aria-hidden="true"></div>
                     </div>
                 </div>
             </section>

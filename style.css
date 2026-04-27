@@ -1500,20 +1500,6 @@ main {
     overflow: hidden;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('assets/gallery/prompt2-3.webp') center/cover no-repeat;
-    opacity: 0.15;
-    filter: contrast(1.5) saturate(1.4) brightness(1.1);
-    pointer-events: none;
-    z-index: 0;
-}
-
 .timeline .container {
     position: relative;
     z-index: 1;
@@ -1764,6 +1750,125 @@ main {
 .timeline-video .video-wrapper--horizontal {
     width: 100%;
     max-width: 720px;
+}
+
+/* Generic video carousel (used in timeline and video-process) */
+.video-carousel {
+    position: relative;
+    margin: 50px auto 0;
+    max-width: 880px;
+}
+
+.video-carousel--vertical {
+    max-width: 440px;
+}
+
+.video-carousel__strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+}
+
+.video-carousel__strip::-webkit-scrollbar {
+    display: none;
+}
+
+.video-carousel__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-carousel__slide .video-wrapper--horizontal,
+.video-carousel__slide .video-wrapper--vertical {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.video-carousel__slide .video-wrapper--horizontal {
+    max-width: 720px;
+}
+
+.video-carousel__slide .video-wrapper--vertical {
+    max-width: 300px;
+}
+
+.video-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    z-index: 3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-carousel.is-multi .video-carousel-arrow {
+    display: flex;
+}
+
+.video-carousel-arrow:hover {
+    background: var(--color-primary-red);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.video-carousel-arrow:hover svg {
+    stroke: white;
+}
+
+.video-carousel-prev {
+    left: 8px;
+}
+
+.video-carousel-next {
+    right: 8px;
+}
+
+.video-carousel__dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.video-carousel.is-multi .video-carousel__dots {
+    display: flex;
+}
+
+.video-carousel__dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: background 0.2s ease, width 0.2s ease;
+}
+
+.video-carousel__dots .dot.active {
+    background: var(--color-primary-red);
+    width: 24px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1100px) {
+    .video-carousel-arrow,
+    .video-carousel.is-multi .video-carousel-arrow {
+        display: none;
+    }
 }
 
 .timeline-note {
@@ -3493,10 +3598,10 @@ main {
 
 .reviews-slider-container {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1360px;
     margin: 40px auto 0;
     position: relative;
-    padding: 0 50px;
+    padding: 0 80px;
     /* Space for the arrows */
 }
 
@@ -3512,44 +3617,43 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 2px solid #ddd;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
     color: var(--color-text-dark);
 }
 
 .review-nav-arrow:hover {
-    border-color: var(--color-primary-red);
-    color: var(--color-primary-red);
+    background: var(--color-primary-red);
+    color: white;
+    transform: translateY(-50%) scale(1.06);
 }
 
-.review-nav-arrow:active {
-    border-color: var(--color-primary-red);
-    border-width: 3px;
-    background: rgba(206, 53, 60, 0.05);
+.review-nav-arrow:hover svg {
+    stroke: white;
 }
 
 .review-prev {
-    left: 10px;
+    left: 8px;
 }
 
 .review-next {
-    right: 10px;
+    right: 8px;
 }
 
 .reviews-track {
     display: flex;
     gap: 30px;
-    padding: 50px 20px;
+    padding: 50px 0;
     align-items: center;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: max-content;
@@ -3629,7 +3733,7 @@ main {
     color: #888;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1360px) {
     .reviews-slider-container {
         padding: 0 20px;
     }
@@ -5504,5 +5608,393 @@ body:has(.cookie-banner.active) .fab-v2-container {
     }
     body:has(.cookie-banner.active) .fab-v2-container {
         bottom: 290px;
+    }
+}
+
+/* === WORKS GALLERY === */
+.works-section {
+    padding: 100px 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+}
+
+.works-strip-wrapper {
+    position: relative;
+    margin-top: 40px;
+}
+
+.works-strip {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 8px 60px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.works-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.works-item {
+    flex: 0 0 calc((100% - 60px - 60px - 32px) / 3);
+    aspect-ratio: 4 / 3;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: zoom-in;
+    background: #1a1a1a;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.works-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.works-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.works-item:hover img {
+    transform: scale(1.05);
+}
+
+.works-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.works-arrow:hover {
+    background: var(--color-primary-red);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.works-arrow:hover svg {
+    stroke: white;
+}
+
+.works-prev {
+    left: 12px;
+}
+
+.works-next {
+    right: 12px;
+}
+
+@media (max-width: 1100px) {
+    .works-section {
+        padding: 60px 0;
+    }
+
+    .works-strip {
+        padding: 8px 20px;
+        gap: 12px;
+    }
+
+    .works-item {
+        flex: 0 0 70%;
+    }
+
+    .works-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .works-item {
+        flex: 0 0 80%;
+        border-radius: 10px;
+    }
+}
+
+/* Lightbox */
+.works-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 80px;
+}
+
+.works-lightbox.is-open {
+    display: flex;
+}
+
+.works-lightbox__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.works-lightbox__close,
+.works-lightbox__nav {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 2;
+}
+
+.works-lightbox__close:hover,
+.works-lightbox__nav:hover {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.works-lightbox__close {
+    top: 24px;
+    right: 24px;
+}
+
+.works-lightbox__prev {
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.works-lightbox__next {
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.works-lightbox__counter {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+    .works-lightbox {
+        padding: 70px 16px;
+    }
+
+    .works-lightbox__close {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .works-lightbox__prev {
+        left: 8px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .works-lightbox__next {
+        right: 8px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* === REVIEWS YANDEX-STYLE (variant) === */
+.reviews-section--yandex .reviews-track {
+    align-items: stretch;
+}
+
+.reviews-section--yandex .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 320px;
+}
+
+.reviews-section--yandex .review-text {
+    flex: 1;
+}
+
+.reviews-section--yandex .review-author {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.reviews-section--yandex .review-text {
+    margin: 0;
+}
+
+.reviews-section--yandex .review-stars {
+    margin-top: 0;
+    order: 3;
+}
+
+.reviews-section--yandex .review-date {
+    color: #999;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Initial-letter avatar (Yandex-style) */
+.review-avatar--initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    background: #6c7a89;
+}
+
+.review-avatar--initial[data-color="blue"]   { background: #4a90e2; }
+.review-avatar--initial[data-color="green"]  { background: #5cb85c; }
+.review-avatar--initial[data-color="orange"] { background: #f5a623; }
+.review-avatar--initial[data-color="pink"]   { background: #e26a8b; }
+.review-avatar--initial[data-color="purple"] { background: #9b6bd0; }
+.review-avatar--initial[data-color="teal"]   { background: #50c5b7; }
+
+/* Review count next to rating in Yandex link */
+.yandex-reviews-link__count {
+    color: #888;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+/* Yandex link in section header */
+.yandex-reviews-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    color: var(--color-text-dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.yandex-reviews-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.yandex-reviews-link__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 16px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.yandex-reviews-link__score {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.yandex-reviews-link__stars {
+    display: inline-flex;
+    gap: 2px;
+    color: #ffb400;
+    font-size: 14px;
+}
+
+.yandex-reviews-link__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Yandex logo (red Я + .Карты text) */
+.yandex-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.yandex-logo__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #fc3f1d;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.yandex-logo__text {
+    font-weight: 700;
+}
+
+@media (max-width: 576px) {
+    .yandex-reviews-link {
+        gap: 10px;
+        padding: 8px 14px;
+        flex-wrap: wrap;
+    }
+
+    .yandex-reviews-link__rating {
+        padding-right: 10px;
+    }
+
+    .yandex-reviews-link__score {
+        font-size: 18px;
+    }
+
+    .yandex-reviews-link__cta {
+        font-size: 13px;
     }
 }

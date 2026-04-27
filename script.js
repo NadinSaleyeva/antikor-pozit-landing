@@ -195,16 +195,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === REVIEWS SLIDER ===
-    const reviewsTrack = document.querySelector('.reviews-track');
-    const reviewsWrapper = document.querySelector('.reviews-track-wrapper');
-    const reviewCards = document.querySelectorAll('.review-card');
-    const reviewPrev = document.querySelector('.review-prev');
-    const reviewNext = document.querySelector('.review-next');
-    const reviewDots = document.querySelectorAll('.review-dot');
+    const isMobile = () => window.innerWidth <= 576;
 
-    if (reviewsTrack && reviewCards.length > 0) {
+    document.querySelectorAll('.reviews-section').forEach(section => {
+        const reviewsTrack = section.querySelector('.reviews-track');
+        const reviewsWrapper = section.querySelector('.reviews-track-wrapper');
+        const reviewCards = section.querySelectorAll('.review-card');
+        const reviewPrev = section.querySelector('.review-prev');
+        const reviewNext = section.querySelector('.review-next');
+        const reviewDots = section.querySelectorAll('.review-dot');
+
+        if (!reviewsTrack || reviewCards.length === 0) return;
+
         let currentReviewIndex = window.innerWidth <= 1200 ? 0 : 1;
-        const isMobile = () => window.innerWidth <= 576;
 
         const updateReviews = () => {
             reviewCards.forEach((card, i) => {
@@ -212,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!isMobile()) {
-                // Desktop/Tablet: Use transform
                 let shift = 0;
                 if (window.innerWidth > 1200) {
                     shift = (currentReviewIndex - 1) * -410;
@@ -227,14 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 reviewsTrack.style.transform = `translateX(${shift}px)`;
             } else {
-                // Mobile: Update dots
                 reviewDots.forEach((dot, i) => {
                     dot.classList.toggle('active', i === currentReviewIndex);
                 });
             }
         };
 
-        // Arrow navigation (desktop only)
         if (reviewPrev && reviewNext) {
             reviewPrev.addEventListener('click', () => {
                 if (currentReviewIndex > 0) {
@@ -251,57 +251,53 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Mobile: Track scroll position to update active card and dots
         if (reviewsWrapper) {
             reviewsWrapper.addEventListener('scroll', () => {
-                if (isMobile()) {
-                    const wrapperCenter = reviewsWrapper.scrollLeft + reviewsWrapper.offsetWidth / 2;
-                    let closestIndex = 0;
-                    let closestDistance = Infinity;
+                if (!isMobile()) return;
+                const wrapperCenter = reviewsWrapper.scrollLeft + reviewsWrapper.offsetWidth / 2;
+                let closestIndex = 0;
+                let closestDistance = Infinity;
 
-                    reviewCards.forEach((card, i) => {
-                        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-                        const distance = Math.abs(cardCenter - wrapperCenter);
-                        if (distance < closestDistance) {
-                            closestDistance = distance;
-                            closestIndex = i;
-                        }
-                    });
-
-                    if (closestIndex !== currentReviewIndex) {
-                        currentReviewIndex = closestIndex;
-                        reviewCards.forEach((card, i) => {
-                            card.classList.toggle('active', i === currentReviewIndex);
-                        });
-                        reviewDots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === currentReviewIndex);
-                        });
+                reviewCards.forEach((card, i) => {
+                    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                    const distance = Math.abs(cardCenter - wrapperCenter);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = i;
                     }
+                });
+
+                if (closestIndex !== currentReviewIndex) {
+                    currentReviewIndex = closestIndex;
+                    reviewCards.forEach((card, i) => {
+                        card.classList.toggle('active', i === currentReviewIndex);
+                    });
+                    reviewDots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentReviewIndex);
+                    });
                 }
             });
         }
 
-        // Dot navigation (mobile only)
         if (reviewDots.length > 0) {
             reviewDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
-                    if (isMobile()) {
-                        currentReviewIndex = index;
-                        const cardWidth = reviewCards[0].offsetWidth;
-                        const gap = 20;
-                        const scrollPosition = currentReviewIndex * (cardWidth + gap);
-                        reviewsWrapper.scrollTo({
-                            left: scrollPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+                    if (!isMobile()) return;
+                    currentReviewIndex = index;
+                    const cardWidth = reviewCards[0].offsetWidth;
+                    const gap = 20;
+                    const scrollPosition = currentReviewIndex * (cardWidth + gap);
+                    reviewsWrapper.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
                 });
             });
         }
 
         window.addEventListener('resize', updateReviews);
         updateReviews();
-    }
+    });
 
     // === CONTACT FORM ===
     const contactForm = document.getElementById('contactForm');
@@ -619,6 +615,144 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(closeFab, 100);
             });
         });
+    }
+
+    // === VIDEO CAROUSELS ===
+    document.querySelectorAll('[data-video-carousel]').forEach(carousel => {
+        const strip = carousel.querySelector('.video-carousel__strip');
+        if (!strip) return;
+        const slides = strip.querySelectorAll('.video-carousel__slide');
+        const prevBtn = carousel.querySelector('.video-carousel-prev');
+        const nextBtn = carousel.querySelector('.video-carousel-next');
+        const dotsBox = carousel.querySelector('.video-carousel__dots');
+
+        if (slides.length < 2) return;
+        carousel.classList.add('is-multi');
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Видео ${i + 1}`);
+            dot.addEventListener('click', () => {
+                strip.scrollTo({ left: i * strip.clientWidth, behavior: 'smooth' });
+            });
+            dotsBox.appendChild(dot);
+        });
+
+        const dots = dotsBox.querySelectorAll('.dot');
+
+        const updateActive = () => {
+            const idx = Math.round(strip.scrollLeft / strip.clientWidth);
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            slides.forEach((slide, i) => {
+                if (i !== idx) {
+                    const v = slide.querySelector('video');
+                    if (v && !v.paused) v.pause();
+                }
+            });
+        };
+
+        strip.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateActive);
+        }, { passive: true });
+
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+            strip.scrollBy({ left: -strip.clientWidth, behavior: 'smooth' });
+        });
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+            strip.scrollBy({ left: strip.clientWidth, behavior: 'smooth' });
+        });
+    });
+
+    // === WORKS GALLERY + LIGHTBOX ===
+    const worksStrip = document.querySelector('[data-works-strip]');
+    const lightbox = document.querySelector('[data-works-lightbox]');
+
+    if (worksStrip && lightbox) {
+        const items = worksStrip.querySelectorAll('.works-item');
+        const prevBtn = document.querySelector('.works-prev');
+        const nextBtn = document.querySelector('.works-next');
+        const lbImg = lightbox.querySelector('.works-lightbox__img');
+        const lbCounter = lightbox.querySelector('.works-lightbox__counter');
+        const lbClose = lightbox.querySelector('.works-lightbox__close');
+        const lbPrev = lightbox.querySelector('.works-lightbox__prev');
+        const lbNext = lightbox.querySelector('.works-lightbox__next');
+
+        let lbIndex = 0;
+
+        const stepWidth = () => {
+            const item = worksStrip.querySelector('.works-item');
+            return item ? item.offsetWidth + 16 : 320;
+        };
+
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+            worksStrip.scrollBy({ left: -stepWidth(), behavior: 'smooth' });
+        });
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+            worksStrip.scrollBy({ left: stepWidth(), behavior: 'smooth' });
+        });
+
+        const showLB = () => {
+            const img = items[lbIndex].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCounter.textContent = `${lbIndex + 1} / ${items.length}`;
+        };
+
+        const openLB = (i) => {
+            lbIndex = i;
+            showLB();
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLB = () => {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        const stepLB = (delta) => {
+            lbIndex = (lbIndex + delta + items.length) % items.length;
+            showLB();
+        };
+
+        items.forEach((item, i) => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLB(i);
+            });
+        });
+
+        if (lbClose) lbClose.addEventListener('click', closeLB);
+        if (lbPrev) lbPrev.addEventListener('click', () => stepLB(-1));
+        if (lbNext) lbNext.addEventListener('click', () => stepLB(1));
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLB();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('is-open')) return;
+            if (e.key === 'Escape') closeLB();
+            else if (e.key === 'ArrowLeft') stepLB(-1);
+            else if (e.key === 'ArrowRight') stepLB(1);
+        });
+
+        let lbTouchStartX = null;
+        lightbox.addEventListener('touchstart', (e) => {
+            lbTouchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        lightbox.addEventListener('touchend', (e) => {
+            if (lbTouchStartX === null) return;
+            const deltaX = e.changedTouches[0].clientX - lbTouchStartX;
+            if (Math.abs(deltaX) > 50) {
+                stepLB(deltaX < 0 ? 1 : -1);
+            }
+            lbTouchStartX = null;
+        }, { passive: true });
     }
 
 });
