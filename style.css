@@ -1897,8 +1897,7 @@ main {
 
 .before-after-grid {
     display: grid;
-    /* FIX: Use min() to prevent cards from exceeding viewport on mobile */
-    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
